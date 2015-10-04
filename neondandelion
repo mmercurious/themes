@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--------------------------------------------
+	01. Neon Dandelion 
+	Made by: meathemes.tumblr.com
+	
+	TERMS OF USAGE:
+	- Do not remove credit
+	- Do not claim as your own
+	- You can make changes
+	- You can use as a base
+	- BUT IF YOU DO you must allow other people to make 
+	changes to that theme too
+
+	---------------------------------------------->
+
+	<meta name="color:Background" content="#fff"/>
+	<meta name="color:Links" content="#737F6E"/>
+	<meta name="color:Header text" content="#000000"/>
+	<meta name="color:Text" content="#000000"/>
+
+	<meta name="text:Post font size" content="10px"/>
+	<meta name="text:Header font size" content="18px"/>
+	<meta name="text:Subtitle font size" content="18px"/>
+
+	<meta name="if:Hide sidebar" content="0"/>
+	<meta name="if:Subtitle" content="1"/>
+	<meta name="text:Subtitle" content=""/>
+	<meta name="text:Ask action" content="asked"/>
+
+	<meta name="text:Link1 Url" content="http://"/>
+	<meta name="text:Link1 Name" content=""/>
+	<meta name="text:Link2 Url" content="http://"/>
+	<meta name="text:Link2 Name" content=""/>
+	<meta name="text:Link3 Url" content="http://"/>
+	<meta name="text:Link3 Name" content=""/>
+	<meta name="text:Link4 Url" content="http://"/>
+	<meta name="text:Link4 Name" content=""/>
+
+	{block:Description} <meta name="description" content="{MetaDescription}" /> {/block:Description}
+	<title>{block:TagPage}{Tag} - {/block:TagPage} {block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage} {block:PostSummary}{PostSummary} - {/block:PostSummary} {Title}
+	</title>
+	
+	<link rel="shortcut icon" href="{Favicon}">
+	<link rel="alternate" type="application/rss+xml" title="{Title} RSS" href="{RSS}">
+	<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/hznqxps/ivOmgjf8v/normalize.css">
+	<link href='https://fonts.googleapis.com/css?family=Eczar:700' rel='stylesheet' type='text/css'>
+
+	<style type="text/css">
+		body {
+			height: 100%;
+			background: {color:Background} url('http://static.tumblr.com/04yjtmb/fV1nvaf9t/dandelion.png') no-repeat;
+			background-attachment: fixed;
+			color: {color:Text};
+			font-family: Helvetica, sans-serif;
+			font-size: {text:Post font size};
+		}
+		a {
+			text-decoration: none;
+			color: {color:Links};
+		}
+		h1, h4, h5, h6 {
+			font-family: 'Eczar', serif;
+			font-weight: normal;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+		}
+		h1 {
+			font-size: {text:Header font size};
+		}
+		h2 {
+			font-weight: normal;
+			color: {color:Header text};
+			letter-spacing: 0.1em;
+			font-size: {text:Subtitle font size};
+		}
+		h3 {
+			font-family: 'Eczar', serif;
+			font-size: 1em;
+			font-weight: normal;
+		}
+		nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		nav li {
+			display: inline;
+		}
+		iframe, img, embed, object, video {
+			max-width: 100%;
+		}
+		/*Pages*/
+		#masthead nav li a {
+			margin-right: 0.5%;
+			padding: 0.2%;
+			border-bottom: 1px solid {color:Header text};
+		}
+		/*Sidebar*/
+		#sidebar {
+			float: left;
+			display: inline-block;
+			padding: 1%;
+			margin: 5%;
+			min-width: 230px;
+			font-size: {text:Post font size};
+		}
+		.setright {
+			text-align: right;
+		}
+		.right, .left {
+			display: inline-block;
+		}
+		.item {
+			margin-bottom: 15%;
+			background: #fff;
+			padding: 1% 5%;
+		}
+		.item li {
+			list-style: none;
+		}
+		nav {
+			margin: 25px auto;
+			text-align: center;
+		}
+		.item nav li a {
+			font-weight: bold;
+			background: #fff;
+			display: block;
+			padding: 1em;
+			margin: 5px;
+			border: 1px solid rgb(159, 29, 96);
+		}
+		.left ul li a {
+			border-radius: 12px 3px 3px 12px;
+		}
+		.right ul li a {
+			text-align: right;
+			border-radius: 3px 12px 12px 3px;
+		}
+		/*Content area*/
+		#content {
+			display: inline-block;
+			margin: 5% auto 5% 20%;
+			width: 100%;
+			max-width: 540px;
+			vertical-align: top;
+		}
+		{block:IfHideSidebar}
+		#sidebar {
+			display: none;
+		}
+		{/block:IfHideSidebar}
+		/*Articles*/
+		#content article {
+			background: #fff;
+			margin-bottom: 5%;
+		}
+		article .inner {
+			display: inline-block;
+			padding: 4%;
+			width: 92%;
+		}
+		/*Post styles*/
+		.title a {
+			color: {color:Text};
+		}
+		blockquote {
+			background: rgba(255, 25, 144, 0.05);
+			margin: 0;
+			padding: 2%;
+		}
+		.photo img {
+			display: block;
+		}
+		.html_photoset {
+			text-align: center;
+			background: rgb(68, 68, 68);
+			padding: 6% 0;
+		}
+		.link .title a {
+			border-bottom: 1px solid;
+		}
+		.chat ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		.chat li {
+			padding: 0.5% 2%;
+		}
+		.chat .even {
+			background: #f2f2f2;
+		}
+		.user {
+			font-size: 0.85em;
+			text-align: center;
+			float: left;
+			margin-right: 3%;
+		}
+		.ans {
+			font-size: 1.2em;
+		}
+		/*Tags*/
+		.metadata {
+			background: rgba(159, 29, 96, 0.36);
+			border-top: 1px solid #ADADAD;
+			font-size: 0.9em;
+			padding: 2% 4%;
+		}
+		.metadata ul {
+			width: 100%;
+			display: inline-block;
+		}
+		.metadata ul, #notes ol {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		.tags {
+			margin-top: 1% !important;
+		}
+		.tags li {
+			padding: 0.5%;
+		}
+		.index li, .tags li {
+			float: left;
+			margin-right: 2%;
+		}
+		.note {
+			border-bottom: 1px solid white;
+			padding: 1% 0;
+		}
+		/*Pagination*/
+		#pagination {
+			margin-bottom: 10px;
+		}
+		#pagination li a {
+			font-weight: 600%;
+			background: #fff;
+			float: center;
+			margin: 0 0 2% 1%;
+			padding: 1% 5%;
+		}
+		/*Common styles*/
+		#content article, .item, #masthead, #pagination a {
+			box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.33);
+		}
+		blockquote, footer {
+			box-shadow: 0px 1px 6px 1px rgba(0, 0, 0, 0.11) inset;
+		}
+		#content article, .item {
+			border-radius: 0.2em;
+		}
+		.credit {
+			float: left;
+			position: absolute;
+			left: 1%;
+			top: 98%;
+		}
+		{CustomCSS}
+	</style>
+
+</head>
+
+<body>
+	<aside id="sidebar">
+		<div class="item">
+			<div class="setright">
+				<h1><a href="/" title="{lang:Home}" style="color: {color:Header text}">{Title}</a></h1>
+				{block:Description}
+					{block:IfSubtitle}
+					<h2>{text:Subtitle}</h2>
+					{/block:Subtitle}
+				<p>{Description}</p>
+				{/block:Description}
+			</div>
+		
+			<nav>
+				<div class="left">
+					<ul>
+						{block:AskEnabled}
+						<li><a href="/ask">{AskLabel}</a></li>
+						{/block:AskEnabled}
+						{block:IfLink1Name}
+						<li><a href="{text:Link1 Url}" title="{text:Link1 Name}">{text:Link1 Name}</a></li>
+						{/block:IfLink1Name}
+						{block:IfLink3Name}
+						<li><a href="{text:Link3 Url}" title="{text:Link3 Name}">{text:Link3 Name}</a></li>
+						{/block:IfLink3Name}
+					</ul>
+				</div>
+				<div class="right">
+					<ul>
+						{block:SubmissionsEnabled}
+						<li><a href="/submit">{SubmitLabel}</a></li>
+						{/block:SubmissionsEnabled}
+						{block:IfLink2Name}
+						<li><a href="{text:Link2 Url}" title="{text:Link2 Name}">{text:Link2 Name}</a></li>
+						{/block:IfLink2Name}
+						{block:IfLink4Name}
+						<li><a href="{text:Link4 Url}" title="{text:Link4 Name}">{text:Link4 Name}</a></li>
+						{/block:IfLink4Name}
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</aside>
+
+	<div id="content">
+		{block:Posts}
+		<article>
+			<!-- Text posts -->
+			{block:Text}
+			<div class="text inner">
+				{block:Title}<h1 class="title"><a href="{Permalink}">{Title}</a></h1>{/block:Title}
+				{Body}
+			{/block:Text}
+			<!-- Photo posts -->
+			{block:Photo}
+			<div class="photo inner">
+				{LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">{LinkCloseTag}
+				{block:Caption}{Caption}{/block:Caption}
+			{/block:Photo}
+			<!-- Photoset posts -->
+			{block:Photoset}
+			<div class="photoset inner">
+				{Photoset-500}
+				{block:Caption}{Caption}{/block:Caption}
+			{/block:Photoset}
+			<!-- Quote posts -->
+			{block:Quote}
+			<div class="quote inner">
+				<blockquote>{Quote}</blockquote>
+				{block:Source}<cite> {Source} </cite> {/block:Source}
+			{/block:Quote}
+			<!-- Link posts -->
+			{block:Link}
+			<div class="link inner">
+				<h1 class="title"><a href="{URL}">{Name}</a></h1>
+				{block:Description}{Description}{/block:Description}
+			{/block:Link}
+			<!-- Chat posts -->
+			{block:Chat}
+			<div class="chat inner">
+				<ul>
+					{block:Lines}<li class="{Alt}"><p>{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</p></li>{/block:Lines}
+				</ul>
+			{/block:Chat}
+			<!-- Audio posts -->
+			{block:Audio}
+			<div class="audio inner">
+				{block:TrackName}<h1 class="title"><a href="{Permalink}">{TrackName}</a></h1>{/block:TrackName}
+				{block:AlbumArt}<img src="{AlbumArtURL}" width="500" height="500">{/block:AlbumArt}
+				{AudioPlayerBlack}
+				{block:Caption}{Caption}{/block:Caption}
+			{/block:Audio}
+			<!-- Video posts -->
+			{block:Video}
+			<div class="video inner">
+				{Video-500}
+				{block:Caption}{Caption}{/block:Caption}
+			{/block:Video}
+			<!-- Answer posts -->
+			{block:Answer}
+			<div class="answer inner">
+				<div class="user"><p>{Asker} {text:Ask action}:</p></div>
+				<h3 class="title">{Question}</h3>
+				<p class="ans">{Answer}</p>
+			{/block:Answer}
+			</div>
+
+			{block:Date}
+			<footer class="metadata">
+				<ul class="index">
+					<li><a href="{Permalink}"> <time datetime="{Year}-{MonthnumberWithZero}-{DayOfMonthWithZero}">{DayOfMonth} {Month} {Year}</time> </a></li>
+
+					{block:NoteCount}<li><a class="notecount" href="{Permalink}#notes">{NoteCountWithLabel} </a></li> {/block:NoteCount}
+
+					{block:ContentSource}
+					<li><a href="{SourceURL}">{lang:Source}:{block:NoSourceLogo}{SourceTitle}{/block:NoSourceLogo} </a></li>
+					{/block:ContentSource}
+				</ul>
+
+				{block:PermalinkPage}
+				{block:HasTags}
+				<ul class="tags">
+					{block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}
+				</ul>
+				{/block:HasTags}
+
+				{block:PostNotes}
+				<div id="notes">
+					{PostNotes}
+				</div>
+				{/block:PostNotes}
+				{/block:PermalinkPage}
+			</footer>
+			{/block:Date}
+		</article>
+		{/block:Posts}
+
+		{block:Pagination}
+		<nav id="pagination">
+			<ul>
+			    {block:PreviousPage}<li><a href="{PreviousPage}">&lt;&lt; back</a></li>{/block:PreviousPage}
+				{block:NextPage}<li><a href="{NextPage}">forth &gt;&gt;</a></li>{/block:NextPage}
+				
+			</ul>
+		</nav>
+		{/block:Pagination}
+	</div>
+
+	<div class="credit">
+		<a href="http://meathemes.tumblr.com" style="font-family: serif">x</a>
+	</div>
+
+</body>
+</html>
