@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--------------------------------------------
+	02. Too little too late
+	Made by: meathemes.tumblr.com
+	
+	TERMS OF USAGE:
+	- Do not remove credit
+	- Do not claim as your own
+	- You can make changes
+	- You can use as a base
+	- BUT IF YOU DO you must allow other people to make 
+	changes to that theme too
+
+	---------------------------------------------->
+	<meta name="image:sideimage" content=""/>
+
+	<meta name="color:Links" content="#000"/>
+	<meta name="text:Post font size" content="10px"/>
+
+	<meta name="text:Link1 Url" content="http://"/>
+	<meta name="text:Link1 Name" content=""/>
+	<meta name="text:Link2 Url" content="http://"/>
+	<meta name="text:Link2 Name" content=""/>
+	<meta name="text:Link3 Url" content="http://"/>
+	<meta name="text:Link3 Name" content=""/>
+
+	{block:Description} <meta name="description" content="{MetaDescription}" /> {/block:Description}
+	<title>{block:TagPage}{Tag} - {/block:TagPage} {block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage} {block:PostSummary}{PostSummary} - {/block:PostSummary} {Title}
+	</title>
+	
+	<link rel="shortcut icon" href="{Favicon}">
+	<link rel="alternate" type="application/rss+xml" title="{Title} RSS" href="{RSS}">
+	<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/hznqxps/ivOmgjf8v/normalize.css">
+	<link href='https://fonts.googleapis.com/css?family=Londrina+Shadow' rel='stylesheet' type='text/css'>
+
+	<style type="text/css">
+		body {
+			background: #fff;
+			color: #000;
+			font-family: Tahoma, sans-serif;
+			text-align: justify;
+			font-size: {text:Post font size};
+		}
+		a {
+			text-decoration: none;
+			color: {color:Links};
+		}
+		h1 {
+			font-family: 'Londrina Shadow', cursive;
+			text-align: center;
+		}
+		h1, h2, h3, h4, h5, h6 {
+			font-weight: normal;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+		}
+		iframe, img, embed, object, video {
+			max-width: 100%;
+		}
+		/*Sidebar*/
+		#sidestuff {
+			position: fixed;
+			width: 250px;
+			height: auto;
+			margin-top: 200px;
+			margin-left: 75px;
+			z-index: 100;
+			background-color: rgba(256, 21, 100, 0.06);
+			padding: 10px;
+			border: 3px solid #000;
+			text-align: center;
+		}
+		#sideimage {
+			width: 200px;
+			margin: 2px auto;
+			height: auto;
+		}
+		.links {
+			font-family: Tahoma, sans-serif;
+			font-weight: bold;
+		}
+		#sidestuff p {
+			text-align: justify;
+			line-height: 85%;
+		}
+		/*Content area*/
+		#content {
+			float: left;
+			margin-top: 75px;
+			margin-left: 500px;
+			text-align: justify;
+			background-color: #fff;
+			margin-bottom: 5%;
+		}
+		/*Articles*/
+		#content article {
+			line-height: 98%;
+			background: #fff;
+			margin-bottom: 5%;
+			border: 3px solid #000;
+		}
+		article .inner {
+			display: inline-block;
+			padding: 4%;
+			max-width: 500px;
+		}
+		/*Post styles*/
+		.title a {
+			color: #000;
+		}
+		blockquote {
+			background: rgba(256, 21, 100, 0.06);
+			margin: 0;
+			padding: 2%;
+		}
+		.photo img {
+			display: block;
+		}
+		.html_photoset {
+			text-align: center;
+			background: #fff;
+			padding: 6% 0;
+		}
+		.link .title a {
+			border-bottom: 1px solid;
+		}
+		.chat ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		.chat li {
+			padding: 0.5% 2%;
+		}
+		.chat .even {
+			background: #D8CAFF;
+		}
+		.bord {
+			border-top: #000 1px solid;
+		}
+		.answer .title {
+			text-align: left;
+			font-size: 12px;
+			text-transform: none;
+		}
+		.user {
+			font-size: 0.85em;
+			text-align: center;
+			text-transform: uppercase;
+			float: left;
+			margin-right: 3%;
+		}
+		/*Tags*/
+		.notesnstuff {
+			font-size: 0.9em;
+			padding: 2% 4%;
+		}
+		.notesnstuff a {
+			text-decoration: none;
+		}
+		.note {
+			border-bottom: 1px solid white;
+			padding: 1% 0;
+		}
+		/*Pagination*/
+		#pagination {
+			background: #fff;
+			margin: 0 0 2% 1%;
+			padding: 10px;
+			text-align: center;
+			font-size: 30px;
+		}
+		/*Common styles*/
+		#content article, .item, #sidestuff {
+			box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.33);
+		}
+		#content article, .item {
+			border-radius: 0.2em;
+		}
+		.credit {
+			float: right;
+			position: fixed;
+			right: 1%;
+			top: 98%;
+		}
+		{CustomCSS}
+	</style>
+
+</head>
+
+<body>
+	<div id="sidestuff">
+		<div class="links">
+			<a href="/">home</a>
+			<a href="/ask">ask</a>
+			{block:SubmissionsEnabled}
+			<a href="/submit">submit</a>
+			{/block:SubmissionsEnabled}
+		</div>
+
+		<h1>{Title}</h1>
+		<div id="sideimage"><img src="{image:sideimage}"></div>
+		
+
+		{block:Description}
+		<p>{Description}</p>
+		{/block:Description}
+
+		<div class="links">
+			{block:IfLink1Name}<a href="{text:Link1 Url}" title="{text:Link1 Name}">{text:Link1 Name}</a>{/block:IfLink1Name}
+			{block:IfLink2Name}<a href="{text:Link2 Url}" title="{text:Link2 Name}">{text:Link2 Name}</a>{/block:IfLink2Name}
+			{block:IfLink3Name}<a href="{text:Link3 Url}" title="{text:Link3 Name}">{text:Link3 Name}</a>{/block:IfLink3Name}
+		</div>
+	</div>
+
+	<div id="content" style="text-align:justify;">
+		{block:Posts}
+		<article>
+			<!-- Text posts -->
+			{block:Text}
+			<div class="text inner">
+				{block:Title}<h1 class="title"><a href="{Permalink}">{Title}</a></h1>{/block:Title}
+				{Body}
+			{/block:Text}
+			<!-- Photo posts -->
+			{block:Photo}
+			<div class="photo inner">
+				{LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">{LinkCloseTag}
+				{block:Caption}{Caption}{/block:Caption}
+			{/block:Photo}
+			<!-- Photoset posts -->
+			{block:Photoset}
+			<div class="photoset inner">
+				{Photoset-500}
+				{block:Caption}{Caption}{/block:Caption}
+			{/block:Photoset}
+			<!-- Quote posts -->
+			{block:Quote}
+			<div class="quote inner">
+				<blockquote>{Quote}</blockquote>
+				{block:Source}<cite> {Source} </cite> {/block:Source}
+			{/block:Quote}
+			<!-- Link posts -->
+			{block:Link}
+			<div class="link inner">
+				<h1 class="title"><a href="{URL}">{Name}</a></h1>
+				{block:Description}{Description}{/block:Description}
+			{/block:Link}
+			<!-- Chat posts -->
+			{block:Chat}
+			<div class="chat inner">
+				<ul>
+					{block:Lines}<li class="{Alt}"><p>{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</p></li>{/block:Lines}
+				</ul>
+			{/block:Chat}
+			<!-- Audio posts -->
+			{block:Audio}
+			<div class="audio inner">
+				{block:TrackName}<h1 class="title"><a href="{Permalink}">{TrackName}</a></h1>{/block:TrackName}
+				{block:AlbumArt}<img src="{AlbumArtURL}" width="500" height="500">{/block:AlbumArt}
+				{AudioPlayerBlack}
+				{block:Caption}{Caption}{/block:Caption}
+			{/block:Audio}
+			<!-- Video posts -->
+			{block:Video}
+			<div class="video inner">
+				{VideoEmbed-500}
+				{block:Caption}{Caption}{/block:Caption}
+			{/block:Video}
+			<!-- Answer posts -->
+			{block:Answer}
+			<div class="answer inner">
+				<p><div class="user">{Asker} made an enquiry:</div></p>
+				<h1 class="title">{Question}</h1>
+				<p class="bord">{Answer}</p>
+			{/block:Answer}
+			</div>
+
+			{Block:Date}<div class="notesnstuff">
+				<a href="{Permalink}">{TimeAgo} {block:NoteCount} &#47; {NoteCountWithLabel}{/block:NoteCount}</a>
+				{block:RebloggedFrom}
+				<a href="{ReblogParentURL}" title="{ReblogParentName}">via</a> &#47; <a href="{ReblogRootURL}" title="{ReblogRootName}">source</a>
+				{/block:RebloggedFrom}
+				{block:HasTags}<div class="tgs">{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+				</div>{/block:HasTags}
+			</div>{/block:Date}
+			
+
+			
+		</article>
+		{/block:Posts}
+
+		{block:Pagination}
+		<div id="pagination">			
+			{block:PreviousPage}<a href="{PreviousPage}">&#65513;</a>{/block:PreviousPage}
+			{block:NextPage}<a href="{NextPage}">&#65515;</a>{/block:NextPage}
+
+		</div>
+		{/block:Pagination}
+	</div>
+	<div class="credit">
+		<a href="http://meathemes.tumblr.com"><img src="http://static.tumblr.com/04yjtmb/wsinyjen7/2credit.png"></a>
+	</div>
+</body>
+</html>
