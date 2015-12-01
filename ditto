@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--------------------------------------------
+	04. Ditto
+	Made by: meathemes.tumblr.com
+	
+	TERMS OF USAGE:
+	- Do not remove credit
+	- Do not claim as your own
+	- You can make changes
+	- You can use as a base
+	- BUT IF YOU DO you must allow other people to make 
+	changes to that theme too
+
+	---------------------------------------------->
+	<meta name="image:sideimage" content=""/>
+
+	<meta name="color:BackGroundUp" content="#D3A7FF">
+	<meta name="color:BackGroundDown" content="#A7FFCE">
+
+	<meta name="color:Links" content="#B08989"/>
+	<meta name="text:Post font size" content="10px"/>
+
+	<meta name="if:Uppercase Description" content="0">
+
+	<meta name="text:Link1 Url" content="http://"/>
+	<meta name="text:Link1 Name" content=""/>
+	<meta name="text:Link2 Url" content="http://"/>
+	<meta name="text:Link2 Name" content=""/>
+	<meta name="text:Link3 Url" content="http://"/>
+	<meta name="text:Link3 Name" content=""/>
+	<meta name="text:Link4 Url" content="http://"/>
+	<meta name="text:Link4 Name" content=""/>
+
+	{block:Description} <meta name="description" content="{MetaDescription}" /> {/block:Description}
+	<title>{block:TagPage}{Tag} - {/block:TagPage} {block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage} {block:PostSummary}{PostSummary} - {/block:PostSummary} {Title}
+	</title>
+	
+	<link rel="shortcut icon" href="{Favicon}">
+	<link rel="alternate" type="application/rss+xml" title="{Title} RSS" href="{RSS}">
+	<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/hznqxps/ivOmgjf8v/normalize.css">
+	<link href='https://fonts.googleapis.com/css?family=Amatic+SC:700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Merriweather:400,400italic' rel='stylesheet' type='text/css'>
+
+	<style type="text/css">
+		html {
+			height: 100%;
+		}
+		body {
+			height: 100%;
+			background: linear-gradient({color:BackgroundUp}, {color:BackgroundDown});
+			background-attachment: fixed;
+			color: #000;
+			font-family: 'Merriweather', Garamond, serif;
+			text-align: justify;
+			font-size: {text:Post font size};
+		}
+		a {
+			text-decoration: none;
+			color: {color:Links};
+		}
+		h1 {
+			font-family: 'Amatic SC', cursive;
+			text-align: center;
+		}
+		h1, h2, h3, h4, h5, h6 {
+			font-weight: normal;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+		}
+		iframe, img, embed, object, video {
+			max-width: 100%;
+		}
+		/*Sidebar*/
+		#sidestuff {
+			position: fixed;
+			width: 250px;
+			height: auto;
+			margin-top: 200px;
+			margin-left: 175px;
+			z-index: 100;
+			background: rgba(152, 232, 230, 0.06);
+			padding: 10px;
+			border-style: dotted double;
+			border-width: 5px;
+			border-color: #989AE8;
+			text-align: center;
+		}
+		.desc {
+			{block:ifUppercaseDescription}
+			text-transform: uppercase;
+			{/block:ifUppercaseDescription}
+		}
+		#sideimage {
+			width: 200px;
+			margin: 2px auto;
+			height: auto;
+		}
+		.links {
+			font-family: 'Merriweather', Garamond, serif;
+			font-style: italic;
+		}
+		#sidestuff p {
+			text-align: justify;
+			line-height: 95%;
+			width: 180px;
+			margin: 5px auto;
+		}
+		/*Content area*/
+		#content {
+			float: left;
+			margin-top: 75px;
+			margin-left: 650px;
+			text-align: justify;
+			background-color: transparent;
+			margin-bottom: 5%;
+		}
+		/*Articles*/
+		#content article {
+			line-height: 99%;
+			background: transparent;
+			margin-bottom: 5%;
+			border-style: dotted double;
+			border-width: 5px;
+			border-color: #989AE8;
+		}
+		article .inner {
+			display: inline-block;
+			padding: 1% 4%;
+			max-width: 500px;
+		}
+		/*Post styles*/
+		p::first-letter {
+			text-transform: uppercase;
+			font-size: 18px;
+		}
+		.bord {
+			border-top: #989AE8 1px solid;
+		}
+		.title a {
+			color: #000;
+		}
+		blockquote {
+			background: rgba(152, 232, 230, 0.06);
+			margin: 0;
+			padding: 2%;
+		}
+		.photo img {
+			display: block;
+		}
+		.html_photoset {
+			text-align: center;
+			background: transparent;
+		}
+		.link .title a {
+			border-bottom: 1px solid;
+		}
+		.chat ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		.chat li {
+			padding: 0.5% 2%;
+		}
+		.chat .even {
+			background: rgba(152, 232, 230, 0.06);
+		}
+		.title {
+			margin-top: 1px;
+		}
+		.answer .title {
+			text-align: left;
+			font-size: 12px;
+			text-transform: none;
+		}
+		/*Tags*/
+		.notesnstuff {
+			font-size: 0.9em;
+			padding: 2% 5% 0% 5%;
+			color: {color:Links};
+		}
+		.notesnstuff a {
+			text-decoration: none;
+		}
+		.note {
+			border-bottom: 1px solid white;
+			padding: 1% 0;
+		}
+		/*Pagination*/
+		#pagination {
+			background: transparent;
+			margin: 0 0 2% 1%;
+			padding: 10px;
+			text-align: center;
+			font-size: 30px;
+		}
+		/*Common styles*/
+		#content article, .item {
+			border-radius: 0.2em;
+		}
+		.credit {
+			float: right;
+			position: fixed;
+			right: 1%;
+			top: 98%;
+		}
+		{CustomCSS}
+	</style>
+
+</head>
+
+<body>
+	<div id="sidestuff">
+		<h1><a href="/">{Title}</a></h1>
+		<div id="sideimage"><img src="{image:sideimage}"></div>
+		
+
+		{block:Description}
+		<p class="desc">{Description}</p>
+		{/block:Description}
+
+		<div class="links">
+			<a href="/">home </a>
+			&#8800; <a href="/ask"> ask </a>
+			{block:SubmissionsEnabled}
+			&#8800; <a href="/submit"> submit</a>
+			{/block:SubmissionsEnabled}
+		</div>
+
+		<div class="links">
+			{block:IfLink1Name}<a href="{text:Link1 Url}" title="{text:Link1 Name}">{text:Link1 Name}</a>{/block:IfLink1Name}
+			{block:IfLink2Name}&#8800; <a href="{text:Link2 Url}" title=" {text:Link2 Name}">{text:Link2 Name}</a>{/block:IfLink2Name}
+			{block:IfLink3Name}&#8800; <a href="{text:Link3 Url}" title=" {text:Link3 Name}">{text:Link3 Name}</a>{/block:IfLink3Name}
+			{block:IfLink4Name}&#8800; <a href="{text:Link4 Url}" title=" {text:Link4 Name}">{text:Link4 Name}</a>{/block:IfLink4Name}
+		</div>
+	</div>
+
+	<div id="content" style="text-align:justify;">
+		{block:Posts}
+		<article>
+			{Block:Date}<div class="notesnstuff">
+				<a href="{Permalink}">{TimeAgo} {block:NoteCount} &#47; {NoteCountWithLabel}{/block:NoteCount}</a>
+				{block:RebloggedFrom}
+				</br><a href="{ReblogParentURL}" title="{ReblogParentName}">via</a> &#47; <a href="{ReblogRootURL}" title="{ReblogRootName}">source</a>
+				{/block:RebloggedFrom}
+				{block:HasTags}</br><div class="tgs">{block:Tags}<a href="{TagURL}">#{Tag} </a>{/block:Tags}
+				</div>{/block:HasTags}
+			</div>{/block:Date}
+			<!-- Text posts -->
+			{block:Text}
+			<div class="text inner">
+				{block:Title}<h1 class="title"><a href="{Permalink}">{Title}</a></h1>{/block:Title}
+				{Body}
+			{/block:Text}
+			<!-- Photo posts -->
+			{block:Photo}
+			<div class="photo inner">
+				{LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">{LinkCloseTag}
+				{block:Caption}{Caption}{/block:Caption}
+			{/block:Photo}
+			<!-- Photoset posts -->
+			{block:Photoset}
+			<div class="photoset inner">
+				{Photoset-500}
+				{block:Caption}{Caption}{/block:Caption}
+			{/block:Photoset}
+			<!-- Quote posts -->
+			{block:Quote}
+			<div class="quote inner">
+				<blockquote>{Quote}</blockquote>
+				{block:Source}<cite> {Source} </cite> {/block:Source}
+			{/block:Quote}
+			<!-- Link posts -->
+			{block:Link}
+			<div class="link inner">
+				<h1 class="title"><a href="{URL}">{Name}</a></h1>
+				{block:Description}{Description}{/block:Description}
+			{/block:Link}
+			<!-- Chat posts -->
+			{block:Chat}
+			<div class="chat inner">
+				<ul>
+					{block:Lines}<li class="{Alt}"><p>{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</p></li>{/block:Lines}
+				</ul>
+			{/block:Chat}
+			<!-- Audio posts -->
+			{block:Audio}
+			<div class="audio inner">
+				{block:TrackName}<h1 class="title"><a href="{Permalink}">{TrackName}</a></h1>{/block:TrackName}
+				{block:AlbumArt}<img src="{AlbumArtURL}" width="500" height="500">{/block:AlbumArt}
+				{AudioPlayerWhite}
+				{block:Caption}{Caption}{/block:Caption}
+			{/block:Audio}
+			<!-- Video posts -->
+			{block:Video}
+			<div class="video inner">
+				{VideoEmbed-500}
+				{block:Caption}{Caption}{/block:Caption}
+			{/block:Video}
+			<!-- Answer posts -->
+			{block:Answer}
+			<div class="answer inner">
+				
+				<p><div class="user">{Asker} made an enquiry:</div></p>
+				<h1 class="title">{Question}</h1>
+				<p class="bord">{Answer}</p>
+			{/block:Answer}
+			</div>
+			
+		</article>
+		{/block:Posts}
+
+		{block:Pagination}
+		<div id="pagination">			
+			{block:PreviousPage}<a href="{PreviousPage}">&#65513;</a>{/block:PreviousPage}
+			{block:NextPage}<a href="{NextPage}">&#65515;</a>{/block:NextPage}
+
+		</div>
+		{/block:Pagination}
+	</div>
+
+	<div class="credit">
+		<a href="http://meathemes.tumblr.com"><img src="http://static.tumblr.com/04yjtmb/wsinyjen7/2credit.png"></a>
+	</div>
+
+</body>
+</html>
